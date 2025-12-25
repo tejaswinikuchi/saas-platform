@@ -1,0 +1,32 @@
+{
+  "project_name": "Multi-Tenant SaaS Platform",
+  "description": "A Dockerized multi-tenant SaaS platform with authentication, role-based access control, tenant isolation, project and task management.",
+  "tech_stack": {
+    "backend": "Node.js, Express.js, PostgreSQL",
+    "frontend": "React",
+    "devops": "Docker, Docker Compose"
+  },
+  "services": {
+    "frontend_url": "http://localhost:3000",
+    "backend_url": "http://localhost:5000",
+    "health_check": "http://localhost:5000/api/health"
+  },
+  "test_credentials": {
+    "super_admin": {
+      "email": "superadmin@system.com",
+      "password": "Admin@123"
+    },
+    "tenant_admin": {
+      "email": "admin@demo.com",
+      "password": "Demo@123",
+      "tenant_subdomain": "demo"
+    },
+    "regular_user": {
+      "email": "user1@demo.com",
+      "password": "User@123",
+      "tenant_subdomain": "demo"
+    }
+  },
+  "docker_command": "docker-compose up -d",
+  "status": "All services running successfully"
+}
