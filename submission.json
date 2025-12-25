@@ -11,20 +11,20 @@
     "backend_url": "http://localhost:5000",
     "health_check": "http://localhost:5000/api/health"
   },
-  "test_credentials": {
-    "super_admin": {
+  "testCredentials": {
+    "superAdmin": {
       "email": "superadmin@system.com",
-      "password": "Admin@123"
+      "password": "Super@123"
     },
-    "tenant_admin": {
+    "tenantAdmin": {
       "email": "admin@demo.com",
       "password": "Demo@123",
-      "tenant_subdomain": "demo"
+      "tenantSubdomain": "demo"
     },
-    "regular_user": {
+    "regularUser": {
       "email": "user1@demo.com",
       "password": "User@123",
-      "tenant_subdomain": "demo"
+      "tenantSubdomain": "demo"
     }
   },
   "docker_command": "docker-compose up -d",
