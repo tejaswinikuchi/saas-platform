@@ -1,11 +1,21 @@
+# ---------- Build Stage ----------
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm install --production
+
+COPY . .
+
+# ---------- Runtime Stage ----------
 FROM node:18-alpine
 
 WORKDIR /app
 
-COPY package.json ./
-RUN npm install
+ENV NODE_ENV=production
 
-COPY . .
+COPY --from=builder /app ./
 
 EXPOSE 5000
 
