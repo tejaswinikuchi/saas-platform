@@ -1,10 +1,15 @@
 # Multi-Tenant SaaS Platform
 
 ## 📌 Project Overview
-This project is a Dockerized Multi-Tenant SaaS Platform designed to demonstrate backend system design, authentication, authorization, and tenant isolation.  
-A single application instance serves multiple organizations (tenants) while ensuring strict data isolation using a shared database and shared schema approach.
+This project is a **Dockerized Multi-Tenant SaaS Platform** designed to demonstrate backend system design, authentication, authorization, and tenant isolation.
 
-The platform supports user management, project management, task management, and role-based access control.
+A single application instance serves multiple organizations (tenants) while ensuring strict data isolation using a **shared database + shared schema** approach.
+
+The platform supports:
+- User management
+- Project management
+- Task management
+- Role-based access control (RBAC)
 
 ---
 
@@ -41,95 +46,129 @@ The platform supports user management, project management, task management, and 
 - Docker
 - Docker Compose
 
-###
-Verify Services
+### Run the application
+```bash
+docker-compose up -d
+This command starts all services automatically:
 
-Backend Health Check:
+PostgreSQL database
+
+Backend API
+
+Frontend application
+
+No manual setup is required.
+
+🔍 Verify Services
+Backend Health Check
 http://localhost:5000/api/health
 
-Frontend Application:
+Frontend Application
 http://localhost:3000
 
 🔐 Test Credentials
+
+These credentials are pre-seeded automatically and are also documented in submission.json.
+
 Super Admin
-
 Email: superadmin@system.com
-
-Password: Admin@123
+Password: Super@123
 
 Tenant Admin
-
 Email: admin@demo.com
-
 Password: Demo@123
-
 Tenant Subdomain: demo
 
 Regular User
-
 Email: user1@demo.com
-
 Password: User@123
-
 Tenant Subdomain: demo
 
-📚 API Features
+📚 API Documentation
+
+Complete API documentation is available at:
+
+docs/API.md
+
+
+The platform exposes 19 secured REST APIs, including authentication, user management, project management, and task management.
+
+✨ Key API Endpoints
 Authentication
 
-Register Tenant
+POST /api/auth/register-tenant
 
-Login
+POST /api/auth/login
 
-Get Current User
+GET /api/auth/me
 
-User Management
+Users
 
-Create User
+POST /api/tenants/:tenantId/users
 
-List Users
+GET /api/tenants/:tenantId/users
 
-Update User
+PUT /api/users/:userId
 
-Delete User
+DELETE /api/users/:userId
 
-Project Management
+Projects
 
-Create Project
+POST /api/projects
 
-List Projects
+GET /api/projects
 
-Update Project
+PUT /api/projects/:projectId
 
-Delete Project
+DELETE /api/projects/:projectId
 
-Task Management
+Tasks
 
-Create Task
+POST /api/projects/:projectId/tasks
 
-List Tasks
+GET /api/projects/:projectId/tasks
 
-Update Task
+PUT /api/tasks/:taskId
 
-Update Task Status
+PATCH /api/tasks/:taskId/status
 
----> Docker Services
+🐳 Docker Services
+Service	Description	Port
+database	PostgreSQL Database	5432
+backend	Node.js Backend API	5000
+frontend	React Frontend	3000
+🎥 Demo Video
 
-database: PostgreSQL (port 5432)
+A demo video (5–12 minutes) showcasing:
 
-backend: Node.js API (port 5000)
+Architecture walkthrough
 
-frontend: React app (port 3000)
+Tenant registration
 
- Project Status
+Login & RBAC
 
-All services are running successfully using Docker Compose.
-Backend, database, and frontend have been verified and are operational.
+Project & task management
 
- Author
+Multi-tenancy isolation
 
-This project was developed as part of a technical task to demonstrate backend development, multi-tenancy design, and Docker-based deployment.
+YouTube Link: To be added
+
+✅ Project Status
+
+All services start using docker-compose up -d
+
+Database migrations run automatically
+
+Seed data loads automatically
+
+Authentication & RBAC verified
+
+Frontend accessible and functional
+
+👤 Author
+
+This project was developed as part of a technical task to demonstrate multi-tenant backend architecture, authentication & authorization, and Docker-based deployment.
 
 
 ---
 
-##  Step 3: Save the file
