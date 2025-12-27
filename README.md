@@ -47,7 +47,7 @@ The platform supports:
 - Docker Compose
 
 ### Run the application
-```bash
+
 docker-compose up -d
 This command starts all services automatically:
 
