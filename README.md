@@ -1,6 +1,6 @@
 # Multi-Tenant SaaS Platform
 
-## 📌 Project Overview
+##  Project Overview
 This project is a **Dockerized Multi-Tenant SaaS Platform** designed to demonstrate backend system design, authentication, authorization, and tenant isolation.
 
 A single application instance serves multiple organizations (tenants) while ensuring strict data isolation using a **shared database + shared schema** approach.
@@ -13,7 +13,7 @@ The platform supports:
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Backend
 - Node.js
@@ -31,7 +31,7 @@ The platform supports:
 
 ---
 
-## 🏗️ Architecture Summary
+##  Architecture Summary
 - **Multi-tenancy model:** Shared database + shared schema
 - **Tenant isolation:** Enforced using `tenant_id` at the application level
 - **Authentication:** JWT-based stateless authentication
@@ -40,7 +40,7 @@ The platform supports:
 
 ---
 
-## 🚀 Setup & Run Instructions
+##  Setup & Run Instructions
 
 ### Prerequisites
 - Docker
@@ -59,14 +59,14 @@ Frontend application
 
 No manual setup is required.
 
-🔍 Verify Services
+## Verify Services
 Backend Health Check
 http://localhost:5000/api/health
 
 Frontend Application
 http://localhost:3000
 
-🔐 Test Credentials
+## Test Credentials
 
 These credentials are pre-seeded automatically and are also documented in submission.json.
 
@@ -84,7 +84,7 @@ Email: user1@demo.com
 Password: User@123
 Tenant Subdomain: demo
 
-📚 API Documentation
+##  API Documentation
 
 Complete API documentation is available at:
 
@@ -93,7 +93,7 @@ docs/API.md
 
 The platform exposes 19 secured REST APIs, including authentication, user management, project management, and task management.
 
-✨ Key API Endpoints
+## Key API Endpoints
 Authentication
 
 POST /api/auth/register-tenant
@@ -132,12 +132,13 @@ PUT /api/tasks/:taskId
 
 PATCH /api/tasks/:taskId/status
 
-🐳 Docker Services
+##  Docker Services
 Service	Description	Port
 database	PostgreSQL Database	5432
 backend	Node.js Backend API	5000
 frontend	React Frontend	3000
-🎥 Demo Video
+
+## Demo Video
 
 A demo video (5–12 minutes) showcasing:
 
@@ -151,9 +152,9 @@ Project & task management
 
 Multi-tenancy isolation
 
-YouTube Link: To be added
+YouTube Link: https://youtu.be/331JyVfmztY
 
-✅ Project Status
+##  Project Status
 
 All services start using docker-compose up -d
 
@@ -165,7 +166,7 @@ Authentication & RBAC verified
 
 Frontend accessible and functional
 
-👤 Author
+## Author
 
 This project was developed as part of a technical task to demonstrate multi-tenant backend architecture, authentication & authorization, and Docker-based deployment.
 
